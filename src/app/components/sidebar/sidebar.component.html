@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar" [ngClass]="{ 'not-show': isOpen }">
+    <div class="profile">
+      <h3>RESTAURANTE NAMU</h3>
+      <hr />
+      <img src="assets/img/logo-fondo-blanco-menu.png" alt="" />
+      <h3 style="text-transform: uppercase">{{ user.nombres }}</h3>
+      <p>{{ user.rol }}</p>
+    </div>
+    <ul>
+      <li>
+        <a class="one" (click)="goToCreateReservation()">
+          <span class="icon"><i class="bx bx-plus-circle"></i></span>
+          <span class="item">Crear Reserva</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="goToMyReservation()">
+          <span class="icon"><i class="bx bx-search"></i></span>
+          <span class="item">Mis Reservas</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="openPdf()">
+          <span class="icon"><i class="bx bx-book-open"></i></span>
+          <span class="item">Ver Carta</span>
+        </a>
+      </li>
+      <li>
+        <a (click)="goToLogOut()" id="cerrar-sesion">
+          <span class="icon"><i class="bx bx-log-out"></i></span>
+          <span class="item">Cerrar Sesión</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- Fin Sidebar -->
+</div>
+<!-- Fin Contenedor -->

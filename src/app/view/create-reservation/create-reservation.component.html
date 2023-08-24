@@ -1,0 +1,132 @@
+<div class="caja">
+  <!-- CAJA RESERVA-->
+  <div class="container-p">
+    <div class="main-buscar-datagrid">
+      <h2>Crear Nueva Reserva</h2>
+      <form>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombres Completos</mat-label>
+          <input
+            matInput
+            placeholder="Ingrese su nombre completo"
+            [value]="consumidor?.persona?.nombreCompletos"
+            readonly
+          />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Teléfono</mat-label>
+          <input
+            matInput
+            type="tel"
+            placeholder="Ingrese su teléfono"
+            [value]="consumidor?.persona?.telefono"
+            readonly
+          />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Correo</mat-label>
+          <input
+            matInput
+            type="email"
+            placeholder="Ingrese su correo"
+            [value]="consumidor?.persona?.correo"
+            readonly
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Fecha de Reserva</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            required
+            [min]="hoy"
+            [formControl]="fecha"
+            (dateChange)="selectionDateChanged($event)"
+          />
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="fecha.hasError('required')"
+            >Seleccione una fecha</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Horario</mat-label>
+          <mat-select
+            [formControl]="horario"
+            required
+            [placeholder]="
+              horarios.length == 0 ? 'No hay Horarios disponibles' : ''
+            "
+          >
+            <mat-option
+              *ngIf="horarios.length == 0; else horariosList"
+              selected
+              disabled
+              >No hay Horarios disponibles</mat-option
+            >
+
+            <ng-template #horariosList>
+              <mat-option
+                *ngFor="let horario of horarios"
+                [value]="horario.idHorarioReserva"
+              >
+                {{ horario.horario }}
+              </mat-option>
+            </ng-template>
+          </mat-select>
+          <mat-error *ngIf="horario.hasError('required')"
+            >Seleccione un horario</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Cantidad de Personas</mat-label>
+          <input
+            [formControl]="cantidadPersonas"
+            matInput
+            type="number"
+            placeholder="Ingrese la cantidad de Personas"
+          />
+          <mat-error *ngIf="cantidadPersonas.hasError('required')"
+            >Ingrese un número >= 1</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Comentarios Adicionales</mat-label>
+          <textarea matInput [formControl]="descripcion"></textarea>
+        </mat-form-field>
+
+        <br />
+        <div class="d-flex justify-content-between gap-2 mt-2">
+          <button
+            mat-raised-button
+            type="button"
+            color="accent"
+            (click)="clearForm()"
+            style="margin: 0"
+          >
+            Limpiar
+          </button>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            (click)="registrarReserva()"
+            style="margin: 0"
+          >
+            Enviar Reserva
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

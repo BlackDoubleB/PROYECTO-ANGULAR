@@ -1,0 +1,50 @@
+.btn-ver{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 100px;
+  text-align: center;
+}
+
+.btn-cerrar{
+  position: relative;
+  margin-top: 20px;
+  margin-left: 110px;
+  width: 100px;
+  text-align: center;
+}
+
+/* Texto del modal */
+.txt-modal {
+  font-size: 30px;
+  color: #2b2a2a;
+}
+
+/* Imagen fluida */
+.img-fluid {
+  width: 100%; 
+}
+
+/* Contenido del diálogo */
+mat-dialog-content {
+  background-color: white;
+  border-radius: 5px;
+}
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .dialog-enter {
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+  }

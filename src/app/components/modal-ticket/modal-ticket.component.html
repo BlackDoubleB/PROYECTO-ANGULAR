@@ -1,0 +1,98 @@
+<div
+  class="modal-header"
+  mat-dialog-title
+  style="
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    align-items: end;
+  "
+>
+  <h2 class="modal-title">Resumen</h2>
+  <img
+    src="/assets/img/logo-login.png"
+    width="70"
+    height="70"
+    alt=""
+    class="img-logo"
+  />
+</div>
+<mat-dialog-content>
+  <form action="">
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>Ticket</mat-label>
+        <input matInput [value]="reserva?.ticket" readonly />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombres Completos</mat-label>
+        <input
+          matInput
+          [value]="reserva?.consumidor?.persona?.nombreCompletos"
+          readonly
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Teléfono</mat-label>
+        <input
+          matInput
+          [value]="reserva?.consumidor?.persona?.telefono"
+          readonly
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Correo</mat-label>
+        <input
+          matInput
+          [value]="reserva?.consumidor?.persona?.correo"
+          readonly
+        />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Fecha de Reserva</mat-label>
+        <input matInput [value]="reserva?.horarioReserva?.fecha" readonly />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Horario</mat-label>
+        <input matInput [value]="reserva?.horarioReserva?.horario" readonly />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Cantidad de Personas</mat-label>
+        <input matInput [value]="reserva?.cantidadPersonas" readonly />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Comentarios Adicionales</mat-label>
+        <textarea matInput [value]="reserva?.comentariosAdicionales" readonly>
+        </textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions style="justify-content: space-around; margin-bottom: 1rem">
+  <button
+    type="button"
+    id="btn-descargar"
+    style="margin: 0"
+    mat-raised-button
+    color="primary"
+  >
+    Descargar
+  </button>
+  <button
+    matDialogClose
+    mat-raised-button
+    color="warn"
+    type="button"
+    data-bs-dismiss="modal"
+    style="margin: 0"
+  >
+    Cerrar
+  </button>
+</mat-dialog-actions>

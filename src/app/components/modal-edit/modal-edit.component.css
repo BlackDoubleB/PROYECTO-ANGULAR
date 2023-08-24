@@ -1,0 +1,28 @@
+mat-dialog-content {
+    background-color: white;
+    border-radius: 5px;
+  }
+label, h2{
+    color: black;
+    text-align: center;
+}
+button{
+    margin-top: 15px;
+    left: 0%;
+    width: 100px;
+    margin-right: 60px;
+}
+
+::ng-deep .mdc-dialog__title::before{
+    display: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { 
+	-moz-appearance:textfield; 
+}

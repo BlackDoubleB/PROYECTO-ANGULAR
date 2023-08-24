@@ -1,0 +1,58 @@
+<header class="header">
+  <div class="header__conteiner">
+    <a href="/">
+      <img class="menu" src="/assets/img/icon-home.png" alt="" />
+    </a>
+    <img class="menu2" src="/assets/img/icon-home2.png" alt="" />
+  </div>
+</header>
+
+<main class="main">
+  <div class="main__conteiner">
+    <div class="conteiner__div">
+      <img class="logo" src="/assets/img/logo-login.png" alt="logo" />
+      <h1>Iniciar Sesión</h1>
+      <p>
+        ¡Ingresa a nuestra ventana de login y déjanos llevarte a un viaje
+        gastronomico inolvidable en Restaurante Namu!
+      </p>
+
+      <form
+        class="section__form"
+        [formGroup]="loginForm"
+        (ngSubmit)="doLogin()"
+      >
+        <label class="label1">
+          <input
+            class="input1"
+            type="text"
+            placeholder="Usuario"
+            id="username"
+            formControlName="user"
+          />
+        </label>
+        <label class="label2">
+          <input
+            class="input2"
+            type="password"
+            placeholder="Password"
+            id="password"
+            formControlName="password"
+          />
+        </label>
+        <button class="btn-ing" type="submit" id="btn-ingresar">
+          Ingresar
+        </button>
+        <div class="ol-con">
+          <a href="#">Olvido su contraseña?</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="conteiner__div2">
+      <a href="#" class="crear-cuenta" (click)="createAccount($event)"
+        >Crea tu cuenta aquí</a
+      >
+    </div>
+  </div>
+</main>

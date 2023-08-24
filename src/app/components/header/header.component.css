@@ -1,0 +1,36 @@
+
+.colapse{
+	margin-left: 0px !important;
+	width: 100% !important;
+}
+.hamburger i{
+	color: black;
+	cursor: pointer;
+}
+
+
+.wrapper .section{
+	width: calc(100% - 225px);
+	margin-left: 225px;
+	transition: all 0.5s ease;
+}
+.top_navbar{
+	position: relative;
+}
+.wrapper .section .top_navbar{
+	background: rgb(249, 248, 248);
+	height: 50px;
+	display: flex;
+	align-items: center;
+	padding: 0px 30px;
+ 
+}
+
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 28px;
+	color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #a2ecff;
+}
